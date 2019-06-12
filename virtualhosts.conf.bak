@@ -1,0 +1,68 @@
+Listen 80
+<VirtualHost *:80>
+        #ServerAdmin webmaster@localhost
+        DocumentRoot /home/cwc/http
+        <Directory "/home/cwc/http">
+                Options +Indexes
+                 IndexOptions FancyIndexing VersionSort NameWidth=*
+                AllowOverride None
+                Require all granted
+        </Directory>
+        # CustomLog with format nickname
+        ErrorLog /home/cwc/http/logs/error.log
+        LogFormat "%h %l %u %t \"%r\" %>s %b" common
+        CustomLog /home/cwc/http/logs/access_log common
+</VirtualHost>
+
+
+<VirtualHost *:80>
+        #ServerAdmin webmaster@localhost
+        DocumentRoot /home/cwc/euler/http
+	ServerName  euler.ioe       
+	<Directory "/home/cwc/euler/http">
+                Options +Indexes 
+                 IndexOptions FancyIndexing VersionSort NameWidth=*
+                AllowOverride None
+                Require all granted
+        </Directory>
+        # CustomLog with format nickname
+        ErrorLog /home/cwc/euler/http/logs/error.log
+        LogFormat "%h %l %u %t \"%r\" %>s %b" common
+        CustomLog /home/cwc/http/logs/access_log common
+</VirtualHost>
+
+
+<VirtualHost *:80>
+        #ServerAdmin webmaster@localhost
+        DocumentRoot /home/dps/http
+        ServerName  3dps.ioe
+        <Directory "/home/dps/http">
+                Options +Indexes
+                 IndexOptions FancyIndexing VersionSort NameWidth=*
+                AllowOverride None
+                Require all granted
+        </Directory>
+        # CustomLog with format nickname
+        ErrorLog /home/dps/http/error.log
+        LogFormat "%h %l %u %t \"%r\" %>s %b" common
+        CustomLog /home/dps/http/logs/access_log common
+</VirtualHost>
+
+<VirtualHost *:80>
+        #ServerAdmin webmaster@localhost
+        DocumentRoot /home/bbd/http
+        ServerName  bbd.ioe
+        <Directory "/home/bbd/http">
+                Options +Indexes
+                 IndexOptions FancyIndexing VersionSort NameWidth=*
+                AllowOverride None
+                Require all granted
+        </Directory>
+        # CustomLog with format nickname
+        ErrorLog /home/bbd/http/logs/error.log
+        LogFormat "%h %l %u %t \"%r\" %>s %b" common
+        CustomLog /home/bbd/http/logs/access_log common
+</VirtualHost>
+
+
+
